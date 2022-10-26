@@ -1,0 +1,59 @@
+Decir si los siguientes documentos XML están bien formados, y, si no lo están, decir por qué y corregir los errores.
+
+Enunciado documento 1:
+
+ <?xml version="1.0"?>
+ <documento>
+ <p>Mi Primer <destacar importancia=1>documento
+ XML</destacar></p]
+ <p>Comienza con la etiqueta <documento&gt;</p>
+ <p>A continuacion colocamos un elemento sin contenido</p>
+ <imagen fichero="imagen.gif">
+ </documento>
+
+Enunciado documento 2:
+
+<?xml version="1.0"?>
+<libros>
+<libro id="quijote">
+<titulo>El Quijote</titulo>
+<autor nombre=cervantes nombre=cervantes>
+<descripcion>Es el m<ejor libro de cervantes.</descripcion>
+</libro]
+</Libros>
+
+
+
+
+ Solucion al problema 1:
+El número 1 debe ir entre comillas
+las etiquetas deben cerrarse siempre, imagen no se cierra.
+
+El código correcto es:
+<?xml version="1.0" encoding="UTF-8"?>
+<documento>
+    <p>Mi Primer
+        <destacar importancia="1">documento
+    XML</destacar>
+    </p>
+    <p>Comienza con la etiqueta </p>
+    <p>A continuacion colocamos un elemento sin contenido</p>
+    <imagen fichero="imagen.gif"> </imagen>
+</documento>
+
+Solucion al problema 2:
+"cervantes" debe ir entre comillas por ser atributo de la etiqueta
+no se pueden repetir los atributos
+no deben mezclarse mayusculas con minusculas en las etiquetas
+las etiquetas deben cerrarse
+
+El código correcto es:
+<?xml version="1.0" encoding="UTF-8"?>
+<libros>
+<libro id="quijote">
+<titulo>El Quijote</titulo>
+<autor nombre="cervantes" > </autor>
+<descripcion>Es el mejor libro de cervantes.</descripcion>
+</libro>
+</libros>
+
